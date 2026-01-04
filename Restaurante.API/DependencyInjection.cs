@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using Restaurante.Business.Interfaces;
+using Restaurante.Business.Services;
 using Restaurante.Infrastructure.Context;
 using Restaurante.Infrastructure.Persistence;
 using Restaurante.Infrastructure.Repository;
 using Restaurante.Model.Interface;
 
-namespace Restaurante.Infrastructure;
+namespace Restaurante.API;
 
 public static class DependencyInjection
 {
@@ -28,6 +28,14 @@ public static class DependencyInjection
         services.AddScoped<IMesaRepository, MesaRepository>();
         services.AddScoped<IOrdenRepository, OrdenRepository>();
         services.AddScoped<IProductoRepository, ProductoRepository>();
+        
+        // Registro de services
+        services.AddScoped<ICategoriaService, CategoriaService>();
+        services.AddScoped<IDetalleOrdenService, DetalleOrdenService>();
+        services.AddScoped<IEmpleadoService, EmpleadoService>();
+        services.AddScoped<IMesaService, MesaService>();
+        services.AddScoped<IOrdenService, OrdenService>();
+        services.AddScoped<IProductoService, ProductoService>();
         
         return services;
     }

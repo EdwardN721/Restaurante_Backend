@@ -21,8 +21,11 @@ public class RestauranteDbContext : DbContext
 
         modelBuilder.Entity<Categoria>(entity =>
         {
-            entity.ToTable("Categoria");
+            entity.ToTable("Categorias");
             entity.HasKey(e => e.Id);
+
+            entity.Property(e => e.Id)
+                .HasColumnName("CategoriaID");
             entity.Property(e => e.FechaRegistro)
                 .HasDefaultValueSql("GETDATE()");
         });
@@ -37,7 +40,7 @@ public class RestauranteDbContext : DbContext
 
         modelBuilder.Entity<Empleado>(entity =>
         {
-            entity.ToTable("Empleado");
+            entity.ToTable("Empleados");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Id)
                 .HasDefaultValueSql("NEWSEQUENTIALID()");
@@ -47,7 +50,7 @@ public class RestauranteDbContext : DbContext
 
         modelBuilder.Entity<Mesa>(entity =>
             {
-                entity.ToTable("Mesa");
+                entity.ToTable("Mesas");
                 entity.HasKey(m => m.Id);
                 entity.Property(e => e.FechaRegistro)
                     .HasDefaultValueSql("GETDATE()");
@@ -55,7 +58,7 @@ public class RestauranteDbContext : DbContext
 
         modelBuilder.Entity<Producto>(entity =>
         {
-            entity.ToTable("Producto");
+            entity.ToTable("Productos");
             entity.HasKey(p => p.Id);
             entity.Property(p => p.FechaRegistro)
                 .HasDefaultValueSql("GETDATE()");
@@ -65,7 +68,7 @@ public class RestauranteDbContext : DbContext
 
         modelBuilder.Entity<Orden>(entity =>
         {
-            entity.ToTable("Orden");
+            entity.ToTable("Ordenes");
             entity.HasKey(o => o.Id);
             entity.Property(o => o.Total)
                 .HasPrecision(18, 2);

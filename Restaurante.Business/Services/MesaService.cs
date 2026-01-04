@@ -1,6 +1,8 @@
+using Restaurante.Business.Interfaces;
+
 namespace Restaurante.Business.Services;
 
-public class MesaService
+public class MesaService : IMesaService
 {
     
 }

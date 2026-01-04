@@ -1,4 +1,4 @@
-using Restaurante.Infrastructure;
+using Restaurante.API;
 
 var builder = WebApplication.CreateBuilder(args);
 

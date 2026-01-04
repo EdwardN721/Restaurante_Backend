@@ -21,7 +21,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return await DbSet.FindAsync(id);
     }
 
-    public async Task<IEnumerable<T?>> ObtenerTodosAsync()
+    public async Task<IEnumerable<T>> ObtenerTodosAsync()
     {
         return await DbSet.ToListAsync();
     }
@@ -39,19 +39,8 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return entity;
     }
 
-    public Task ActualizarAsync(T entity)
+    public void EliminarAsync(T entity)
     {
-        DbSet.Update(entity);
-        
-        return Task.CompletedTask;
-    }
-
-    public async Task EliminarAsync(object id)
-    {
-        var entity = await DbSet.FindAsync(id);
-        if (entity != null)
-        {
-            DbSet.Remove(entity);
-        }
+        DbSet.Remove(entity);
     }
 }
