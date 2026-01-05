@@ -11,10 +11,10 @@ public class Orden
     public DateTime? FechaModificacion { get; set; }
     
     public int MesaId { get; set; }
-    public virtual Mesa? Mesa { get; set; }
+    public Mesa? Mesa { get; set; }
     
     public Guid EmpleadoId { get; set; }
-    public virtual Empleado? Empleado { get; set; }
+    public Empleado? Empleado { get; set; }
     
-    public virtual ICollection<DetalleOrden> DetalleOrden { get; set; } = new List<DetalleOrden>();
+    public ICollection<DetalleOrden> DetalleOrden { get; set; } = new List<DetalleOrden>();
 }

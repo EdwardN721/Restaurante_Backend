@@ -1,7 +1,7 @@
 namespace Restaurante.Business.Dtos.Respuesta;
 
 public record RespuestaProductoDto(
-        int Id,
+        Guid Id,
         string Nombre,
         decimal Precio,
         bool Activo,

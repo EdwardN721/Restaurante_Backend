@@ -5,5 +5,6 @@ public record RespuestaDetalleOrdenDto(
     int Cantidad,
     decimal PrecioUnitario,
     int OrdenId,
-    int ProductoId
+    Guid ProductoId,
+    decimal SubTotal
     );

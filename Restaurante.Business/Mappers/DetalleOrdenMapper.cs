@@ -32,7 +32,8 @@ public static class DetalleOrdenMapper
             detalleOrden.Cantidad,
             detalleOrden.PrecioUnitario,
             detalleOrden.OrdenId,
-            detalleOrden.ProductoId
+            detalleOrden.ProductoId,
+            detalleOrden.SubTotal
             );
     }
 

@@ -4,5 +4,5 @@ public record PeticionDetalleOrdenDto(
         int Cantidad,
         decimal PrecioUnitario,
         int OrdenId,
-        int ProductoId
+        Guid ProductoId
     );
